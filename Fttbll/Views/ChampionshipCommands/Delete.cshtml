@@ -1,0 +1,29 @@
+﻿@model Fttbll.Models.ChampionshipCommand
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>ChampionshipCommand</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Command)
+        </dt>
+        @Html.DisplayFor(model => model.Command.CommandID)
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Championship)
+        </dt>
+        @Html.DisplayFor(model => model.Championship.ID)
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="ChampionshipCommandID" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>
